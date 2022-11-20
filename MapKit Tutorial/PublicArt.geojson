@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+      {
+      "type":"Feature",
+      "properties":{
+        "location":"Lester McCoy Pavilion",
+        "latitude":"21.290824",
+        "description":"...",
+        "thumb":null,
+        "credit":"Funded by the Works Progress Administration",
+        "objectid":"1930.01.01",
+        "creator":"Robert Lee Eskridge",
+        "longitude":"-157.85131",
+        "imagefile":"http://....JPG",
+        "date":"1935",
+        "discipline":"Mural",
+        "title":"The Makahiki Festival - The Makai Mural",
+        "access":"Limited"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[-157.85131,21.290824]
+      }
+    }
+  ]
+}
+
+
+

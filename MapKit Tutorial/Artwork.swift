@@ -28,6 +28,7 @@ class Artwork: NSObject, MKAnnotation {
 
     super.init()
   }
+    
     init?(feature: MKGeoJSONFeature) {
       // 1
       guard
@@ -65,6 +66,20 @@ class Artwork: NSObject, MKAnnotation {
       mapItem.name = title
       return mapItem
     }
-
+    
+    var markerTintColor: UIColor  {
+      switch discipline {
+      case "Monument":
+        return .red
+      case "Mural":
+        return .cyan
+      case "Plaque":
+        return .blue
+      case "Sculpture":
+        return .purple
+      default:
+        return .green
+      }
+    }
 }
 

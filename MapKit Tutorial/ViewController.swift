@@ -13,10 +13,42 @@ class ViewController: UIViewController {
     
     @IBOutlet private var mapView: MKMapView!
     
+    private var artworks: [Artwork] = []
+    
     // Set initial location in Honolulu
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
 
-    private var artworks: [Artwork] = []
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        mapView.centerToLocation(initialLocation)
+        
+        let oahuCenter = CLLocation(latitude: 21.4765, longitude: -157.9647)
+        let region = MKCoordinateRegion(
+          center: oahuCenter.coordinate,
+          latitudinalMeters: 50000,
+          longitudinalMeters: 60000)
+        mapView.setCameraBoundary(
+          MKMapView.CameraBoundary(coordinateRegion: region),
+          animated: true)
+        
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200000)
+        mapView.setCameraZoomRange(zoomRange, animated: true)
+
+        mapView.delegate = self
+        
+        // Show artwork on map
+        let artwork = Artwork(
+          title: "King David Kalakaua",
+          locationName: "Waikiki Gateway Park",
+          discipline: "Sculpture",
+          coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
+        mapView.addAnnotation(artwork)
+
+        loadInitialData()
+        mapView.addAnnotations(artworks)
+
+    }
 
     private func loadInitialData() {
       // 1
@@ -41,39 +73,6 @@ class ViewController: UIViewController {
         print("Unexpected error: \(error).")
       }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        mapView.delegate = self
-
-        mapView.centerToLocation(initialLocation)
-        
-        let oahuCenter = CLLocation(latitude: 21.4765, longitude: -157.9647)
-        let region = MKCoordinateRegion(
-          center: oahuCenter.coordinate,
-          latitudinalMeters: 50000,
-          longitudinalMeters: 60000)
-        mapView.setCameraBoundary(
-          MKMapView.CameraBoundary(coordinateRegion: region),
-          animated: true)
-        
-        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200000)
-        mapView.setCameraZoomRange(zoomRange, animated: true)
-
-        // Show artwork on map
-        let artwork = Artwork(
-          title: "King David Kalakaua",
-          locationName: "Waikiki Gateway Park",
-          discipline: "Sculpture",
-          coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
-        mapView.addAnnotation(artwork)
-
-        loadInitialData()
-        mapView.addAnnotations(artworks)
-
-    }
-
 
 }
 
