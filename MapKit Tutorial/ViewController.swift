@@ -52,6 +52,8 @@ class ViewController: UIViewController {
           forAnnotationViewWithReuseIdentifier:
             MKMapViewDefaultAnnotationViewReuseIdentifier)
 
+
+
     }
 
     private func loadInitialData() {

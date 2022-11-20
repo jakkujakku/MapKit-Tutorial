@@ -18,7 +18,11 @@ class ArtworkMarkerView: MKMarkerAnnotationView {
       }
       canShowCallout = true
       calloutOffset = CGPoint(x: -5, y: 5)
-      rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        let mapsButton = UIButton(frame: CGRect(
+          origin: CGPoint.zero,
+          size: CGSize(width: 48, height: 48)))
+        mapsButton.setBackgroundImage(#imageLiteral(resourceName: "Map"), for: .normal)
+        rightCalloutAccessoryView = mapsButton
 
       // 2
       markerTintColor = artwork.markerTintColor
@@ -35,14 +39,24 @@ class ArtworkView: MKAnnotationView {
   override var annotation: MKAnnotation? {
     willSet {
       guard let artwork = newValue as? Artwork else {
-        return
+          return
       }
-
       canShowCallout = true
       calloutOffset = CGPoint(x: -5, y: 5)
-      rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        let mapsButton = UIButton(frame: CGRect(
+          origin: CGPoint.zero,
+          size: CGSize(width: 48, height: 48)))
+        mapsButton.setBackgroundImage(#imageLiteral(resourceName: "Map"), for: .normal)
+        rightCalloutAccessoryView = mapsButton
 
-      image = artwork.image
+        let detailLabel = UILabel()
+        detailLabel.numberOfLines = 0
+        detailLabel.font = detailLabel.font.withSize(12)
+        detailLabel.text = artwork.subtitle
+        detailCalloutAccessoryView = detailLabel
+
+        image = artwork.image
     }
   }
 }
+
