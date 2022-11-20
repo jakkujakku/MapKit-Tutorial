@@ -13,6 +13,7 @@
 		4EF99AE3292A850300C9D170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF99AE1292A850300C9D170 /* Main.storyboard */; };
 		4EF99AE5292A850400C9D170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF99AE4292A850400C9D170 /* Assets.xcassets */; };
 		4EF99AE8292A850500C9D170 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF99AE6292A850500C9D170 /* LaunchScreen.storyboard */; };
+		4EF99AF0292A88A700C9D170 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF99AEF292A88A700C9D170 /* Artwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4EF99AE4292A850400C9D170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EF99AE7292A850500C9D170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EF99AE9292A850500C9D170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF99AEF292A88A700C9D170 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				4EF99ADB292A850300C9D170 /* AppDelegate.swift */,
 				4EF99ADD292A850300C9D170 /* SceneDelegate.swift */,
 				4EF99ADF292A850300C9D170 /* ViewController.swift */,
+				4EF99AEF292A88A700C9D170 /* Artwork.swift */,
 				4EF99AE1292A850300C9D170 /* Main.storyboard */,
 				4EF99AE4292A850400C9D170 /* Assets.xcassets */,
 				4EF99AE6292A850500C9D170 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				4EF99AE0292A850300C9D170 /* ViewController.swift in Sources */,
 				4EF99ADC292A850300C9D170 /* AppDelegate.swift in Sources */,
+				4EF99AF0292A88A700C9D170 /* Artwork.swift in Sources */,
 				4EF99ADE292A850300C9D170 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
