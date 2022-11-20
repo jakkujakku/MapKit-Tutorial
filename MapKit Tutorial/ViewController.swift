@@ -16,6 +16,32 @@ class ViewController: UIViewController {
     // Set initial location in Honolulu
     let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
 
+    private var artworks: [Artwork] = []
+
+    private func loadInitialData() {
+      // 1
+      guard
+        let fileName = Bundle.main.url(forResource: "PublicArt", withExtension: "geojson"),
+        let artworkData = try? Data(contentsOf: fileName)
+        else {
+          return
+      }
+
+      do {
+        // 2
+        let features = try MKGeoJSONDecoder()
+          .decode(artworkData)
+          .compactMap { $0 as? MKGeoJSONFeature }
+        // 3
+        let validWorks = features.compactMap(Artwork.init)
+        // 4
+        artworks.append(contentsOf: validWorks)
+      } catch {
+        // 5
+        print("Unexpected error: \(error).")
+      }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
