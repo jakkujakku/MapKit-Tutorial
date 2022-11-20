@@ -46,7 +46,6 @@
 		4EF99ACF292A850300C9D170 = {
 			isa = PBXGroup;
 			children = (
-				4EF99AF3292A90D300C9D170 /* ArtworkViews.swift */,
 				4EF99ADA292A850300C9D170 /* MapKit Tutorial */,
 				4EF99AD9292A850300C9D170 /* Products */,
 			);
@@ -67,6 +66,7 @@
 				4EF99ADD292A850300C9D170 /* SceneDelegate.swift */,
 				4EF99ADF292A850300C9D170 /* ViewController.swift */,
 				4EF99AEF292A88A700C9D170 /* Artwork.swift */,
+				4EF99AF3292A90D300C9D170 /* ArtworkViews.swift */,
 				4EF99AF1292A8D2200C9D170 /* PublicArt.geojson */,
 				4EF99AE1292A850300C9D170 /* Main.storyboard */,
 				4EF99AE4292A850400C9D170 /* Assets.xcassets */,

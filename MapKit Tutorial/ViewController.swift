@@ -47,6 +47,10 @@ class ViewController: UIViewController {
 
         loadInitialData()
         mapView.addAnnotations(artworks)
+        mapView.register(
+          ArtworkMarkerView.self,
+          forAnnotationViewWithReuseIdentifier:
+            MKMapViewDefaultAnnotationViewReuseIdentifier)
 
     }
 

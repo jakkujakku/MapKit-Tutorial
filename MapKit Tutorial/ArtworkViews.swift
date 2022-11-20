@@ -22,7 +22,8 @@ class ArtworkMarkerView: MKMarkerAnnotationView {
       // 2
       markerTintColor = artwork.markerTintColor
       if let letter = artwork.discipline?.first {
-        glyphText = String(letter)
+          glyphImage = artwork.image
+
       }
     }
   }
